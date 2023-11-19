@@ -1,1 +1,1 @@
-# shell-collection
+# Collection of my Shell script collection
