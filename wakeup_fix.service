@@ -1,0 +1,20 @@
+# Put the below in /etc/systemd/system/wakeup-fix.service
+# 
+# then do 
+#  sudo systemctl daemon-reload 
+#  sudo systemctl start wakeup-fix
+#
+# and check on it with 
+#  systemctl status wakeup-fix
+#
+# then enable it so it starts after boot with 
+#  sudo systemctl enable wakeup-fix
+
+[Unit]
+Description=Wakeup FIX
+
+[Service]
+ExecStart=/bin/bash -c "echo RP05 >> /proc/acpi/wakeup"
+
+[Install]
+WantedBy=multi-user.target
